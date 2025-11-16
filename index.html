@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blackjack – Prototype</title>
   <style>
     body {
@@ -43,6 +44,37 @@
   padding: 10px;
   border: 1px solid #ccc;
   display: none;   /* initially hidden */
+}
+@media (max-width: 600px) {
+  body {
+    padding-top: 16px;
+  }
+
+  .card-row {
+    gap: 4px;
+    flex-wrap: wrap;            /* allow cards to wrap instead of overflow */
+    justify-content: center;
+  }
+
+  .card {
+    width: 72px;                /* smaller cards on mobile */
+    height: 115px;
+  }
+
+  .buttons {
+    flex-direction: column;     /* stack Start / Hit / Stay */
+    align-items: center;
+  }
+
+  #settingsBtn {
+    top: 8px;
+    left: 8px;
+  }
+
+  #settingsPanel {
+    top: 46px;                  /* panel just under Settings */
+    left: 8px;
+  }
 }
   </style>
 </head>
