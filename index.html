@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blackjack – Prototype</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-top: 40px;
+    }
+    .card-row {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+    .card {
+      width: 100px;
+      height: 160px;
+    }
+    .buttons {
+      display: flex;
+      gap: 12px;
+      margin-top: 12px;
+    }
+  .settings {
+  width: 50x;
+  height: 100x;
+  background-color: white;
+
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#settingsPanel {
+  position: absolute;
+  top: 60px;       /* below Settings button */
+  left: 20px;      /* aligned near left edge */
+  background: white;
+  padding: 10px;
+  border: 1px solid #ccc;
+  display: none;   /* initially hidden */
+}
+  </style>
+</head>
+<body>
+
+  <h2>Dealer</h2>
+  <div class="card-row" id="dealerRow">
+    <img id="dealerCard1" class="card" src="cards/BACK.png" alt="">
+    <img id="dealerCard2" class="card" src="cards/BACK.png" alt="">
+  </div>
+
+  <div id="dealerTotal">Dealer total: 0</div>
+  <div id="dealerPoints">Dealer points: 100</div>
+
+
+  <h2>Your hand</h2>
+  <div class="card-row" id="playerRow">
+    <img id="playerCard1" class="card" src="cards/BACK.png" alt="">
+    <img id="playerCard2" class="card" src="cards/BACK.png" alt="">
+  </div>
+
+  <div id="playerTotal">Your total: 0</div>
+  <div id="playerPoints">Your points: 100</div>
+
+<div class="buttons">
+  <button id="startBtn" onclick="onStart()">Start</button>
+  <button id="hitBtn"   onclick="onHit()"  style="display:none">Hit</button>
+  <button id="stayBtn"  onclick="onStay()" style="display:none">Stay</button>
+</div>
+
+<div id="msg"></div>
+
+<button class="settings" id="settingsBtn" onclick="toggleSettings()">Settings</button>
+
+<div id="settingsPanel">
+  <button onclick="setDifficulty(3)">Very Easy</button>
+  <button onclick="setDifficulty(2)">Easy</button>
+  <button onclick="setDifficulty(1)">Normal</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
